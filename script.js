@@ -104,3 +104,25 @@ botao.addEventListener('click', (event) => {
     alert('cliquei no botao');
     event.preventDefault();
 });
+
+const limpar = document.getElementById('btn-limpar');
+const filtros = document.getElementsByClassName('filtro');
+
+limpar.addEventListener('click', (event)=>{
+    event.preventDefault();
+
+    for (let i = 0; i < filtros.length; i++){
+        filtros[i].checked = false;
+        console.log(filtros[i].name)
+    }
+
+    showAlert('.alert');
+})
+
+function showAlert(el){
+    const divAlert = document.querySelector(el);
+    divAlert.style.display = 'block';
+    setTimeout(function() {
+        divAlert.style.display = 'none';
+    }, 3000)
+}
